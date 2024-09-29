@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
 
 from utils.sintomas import sintomas_por_idade, sintomas_por_sexo, sintomas_uso_mascara, sintomas_por_regiao, sintomas_por_plano_saude
 from utils.comportamento import comportamento_trabalho, comportamento_distanciamento_social
