@@ -15,11 +15,11 @@ def economia_renda_familiar():
     query = """
     SELECT
         CASE
-            WHEN CAST(c01012 AS FLOAT) <= 1000 THEN 'Até R$1000'
-            WHEN CAST(c01012 AS FLOAT) BETWEEN 1001 AND 2000 THEN 'R$1001 - R$2000'
-            WHEN CAST(c01012 AS FLOAT) BETWEEN 2001 AND 3000 THEN 'R$2001 - R$3000'
-            WHEN CAST(c01012 AS FLOAT) BETWEEN 3001 AND 5000 THEN 'R$3001 - R$5000'
-            WHEN CAST(c01012 AS FLOAT) > 5000 THEN 'Acima de R$5000'
+            WHEN CAST(c01012 AS INT64) <= 1000 THEN 'Até R$1000'
+            WHEN CAST(c01012 AS INT64) BETWEEN 1001 AND 2000 THEN 'R$1001 - R$2000'
+            WHEN CAST(c01012 AS INT64) BETWEEN 2001 AND 3000 THEN 'R$2001 - R$3000'
+            WHEN CAST(c01012 AS INT64) BETWEEN 3001 AND 5000 THEN 'R$3001 - R$5000'
+            WHEN CAST(c01012 AS INT64) > 5000 THEN 'Acima de R$5000'
             ELSE 'Desconhecido'
         END AS faixa_renda,
         COUNT(*) AS total_familias
